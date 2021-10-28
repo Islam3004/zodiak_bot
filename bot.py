@@ -12,7 +12,7 @@ def start(message):
     btn1 = types.KeyboardButton('Меню')
     btn2 = types.KeyboardButton('Выйти')
     markup.add(btn1, btn2)
-    text = "Здарова зайбал. Выбери дальнейшие действие, а то пизды получишь"
+    text = "Выбери дальнейшие действие"
     bot.send_message(message.chat.id, text, reply_markup = markup)
 
 @bot.message_handler(content_types = ['text'])
@@ -36,7 +36,7 @@ def echo(message):
         markup.add(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12)
         bot.send_message(message.chat.id, text, reply_markup = markup)
     elif get_message.lower() == 'выйти':
-        text = 'Нихуя себе, сен пиздец типсинго, сьебался анда!'
+        text = 'Ниrytqv мыод    !'
         bot.send_message(message.chat.id, text)
 
 @bot.callback_query_handler(func =lambda call: True)
@@ -61,7 +61,45 @@ def callback_inline(call):
             text = data
             bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
 
+        elif call.data == 'lev':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
 
+        elif call.data == 'deva':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'vesy':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'scorpion':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'strelec':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'kozerog':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'vodolei':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+
+        elif call.data == 'ryby':
+            data = get_information(call.data)
+            text = data
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
 
 bot.polling(none_stop=True)
 
