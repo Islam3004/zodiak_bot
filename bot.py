@@ -20,7 +20,7 @@ def echo(message):
     get_message = message.text
     if get_message.lower() == 'меню':
         text = 'Кликни на свой знак задиака, чтоб я тебя развёл на деньги'
-        markup = types.InlineKeyboardMarkup(row_width = 4)
+        markup = types.InlineKeyboardMarkup(row_width = 12)
         item1 = types.InlineKeyboardButton('Овен', callback_data = 'oven')
         item2 = types.InlineKeyboardButton('Телец', callback_data = 'telec')
         item3 = types.InlineKeyboardButton('Близнецы', callback_data = 'bliznecy')
@@ -49,7 +49,7 @@ def callback_inline(call):
         elif call.data == 'telec':
             data = get_information(call.data)
             text = data
-            bot.edit_message_text(chat_id=call.message.chat.id, text=text,message_id=call.message.message_id, reply_markup=None)
+            bot.edit_message_text(chat_id=call.message.chat.id, text=text, message_id=call.message.message_id, reply_markup=None)
 
         elif call.data == 'bliznecy':
             data = get_information(call.data)
